@@ -1,0 +1,50 @@
+---
+sidebar_position: 3
+title: "LLM Task Planner"
+description: Use LLMs for robot task planning
+---
+
+# LLM Task Planner
+
+Integrate Claude or Llama for intelligent task planning.
+
+## Learning Objectives
+
+- Connect to LLM APIs
+- Design action schemas
+- Parse LLM responses
+- Generate robot commands
+
+## Claude API Example
+
+```python title="llm_planner.py"
+from anthropic import Anthropic
+
+client = Anthropic()
+
+def plan_action(command: str) -> dict:
+    response = client.messages.create(
+        model="claude-3-5-sonnet-20241022",
+        max_tokens=1024,
+        system="You are a robot task planner. Output JSON action plans.",
+        messages=[{"role": "user", "content": command}]
+    )
+    return parse_action(response.content[0].text)
+```
+
+## Action Schema
+
+```json
+{
+  "action": "navigate",
+  "target": "kitchen",
+  "then": {
+    "action": "pick",
+    "object": "cup"
+  }
+}
+```
+
+## Summary
+
+**[Continue to VLA Pipeline →](./vla-pipeline)**

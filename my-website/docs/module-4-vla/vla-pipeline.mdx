@@ -1,0 +1,38 @@
+---
+sidebar_position: 4
+title: "VLA Pipeline"
+description: Build the complete Voice-Language-Action pipeline
+---
+
+# VLA Pipeline
+
+Integrate voice, language, and action into a complete system.
+
+## Learning Objectives
+
+- Connect all VLA components
+- Handle action execution
+- Implement feedback loops
+- Optimize latency
+
+## Pipeline Architecture
+
+```mermaid
+sequenceDiagram
+    participant Voice
+    participant Whisper
+    participant LLM
+    participant ROS2
+    participant Robot
+
+    Voice->>Whisper: Audio
+    Whisper->>LLM: Text
+    LLM->>ROS2: Action Plan
+    ROS2->>Robot: Commands
+    Robot->>ROS2: Status
+    ROS2->>LLM: Feedback
+```
+
+## Summary
+
+**[Continue to Troubleshooting →](./troubleshooting)**

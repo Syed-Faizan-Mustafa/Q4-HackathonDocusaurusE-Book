@@ -1,0 +1,52 @@
+---
+sidebar_position: 2
+title: "Whisper Integration"
+description: Add voice recognition with OpenAI Whisper
+---
+
+# Whisper Integration
+
+Integrate OpenAI Whisper for real-time voice recognition.
+
+## Learning Objectives
+
+- Install Whisper locally
+- Create a voice capture node
+- Process audio in real-time
+- Publish transcriptions to ROS 2
+
+## Installation
+
+```bash
+pip install openai-whisper
+pip install sounddevice numpy
+```
+
+## Voice Capture Node
+
+```python title="whisper_node.py"
+import rclpy
+from rclpy.node import Node
+from std_msgs.msg import String
+import whisper
+import sounddevice as sd
+import numpy as np
+
+class WhisperNode(Node):
+    def __init__(self):
+        super().__init__('whisper_node')
+        self.publisher = self.create_publisher(String, '/voice/transcription', 10)
+        self.model = whisper.load_model("base")
+        self.get_logger().info('Whisper node ready')
+
+    def transcribe(self, audio):
+        result = self.model.transcribe(audio)
+        msg = String()
+        msg.data = result["text"]
+        self.publisher.publish(msg)
+        return result["text"]
+```
+
+## Summary
+
+**[Continue to LLM Planner →](./llm-planner)**
