@@ -30,6 +30,7 @@ const config: Config = {
   markdown: {
     mermaid: true,
   },
+
   themes: ['@docusaurus/theme-mermaid'],
 
   presets: [
@@ -37,7 +38,7 @@ const config: Config = {
       'classic',
       {
         docs: {
-          sidebarPath: './sidebars.ts',
+          sidebarPath: require.resolve('./sidebars.ts'),
           editUrl:
             'https://github.com/faizanmustafa/e-book-hackathon-2025/tree/main/my-website/',
           showLastUpdateTime: false,
@@ -45,7 +46,7 @@ const config: Config = {
         },
         blog: false,
         theme: {
-          customCss: './src/css/custom.css',
+          customCss: require.resolve('./src/css/custom.css'),
         },
       } satisfies Preset.Options,
     ],
@@ -71,21 +72,9 @@ const config: Config = {
           position: 'left',
           label: 'Learn',
         },
-        {
-          to: '/docs/module-1-ros2/intro',
-          label: 'ROS 2',
-          position: 'left',
-        },
-        {
-          to: '/docs/module-4-vla/intro',
-          label: 'VLA',
-          position: 'left',
-        },
-        {
-          to: '/docs/capstone/overview',
-          label: 'Capstone',
-          position: 'left',
-        },
+        {to: '/docs/module-1-ros2/intro', label: 'ROS 2', position: 'left'},
+        {to: '/docs/module-4-vla/intro', label: 'VLA', position: 'left'},
+        {to: '/docs/capstone/overview', label: 'Capstone', position: 'left'},
         {
           href: 'https://github.com/faizanmustafa/e-book-hackathon-2025',
           label: 'GitHub',
@@ -118,10 +107,7 @@ const config: Config = {
         {
           title: 'Community',
           items: [
-            {
-              label: 'ROS Discourse',
-              href: 'https://discourse.ros.org/',
-            },
+            {label: 'ROS Discourse', href: 'https://discourse.ros.org/'},
             {
               label: 'NVIDIA Isaac Forum',
               href:
@@ -140,22 +126,10 @@ const config: Config = {
     prism: {
       theme: prismThemes.github,
       darkTheme: prismThemes.dracula,
-      additionalLanguages: [
-        'bash',
-        'python',
-        'yaml',
-        'markup',
-        'cpp',
-        'json',
-      ],
+      additionalLanguages: ['bash', 'python', 'yaml', 'markup', 'cpp', 'json'],
     },
-    mermaid: {
-      theme: {light: 'neutral', dark: 'dark'},
-    },
-    tableOfContents: {
-      minHeadingLevel: 2,
-      maxHeadingLevel: 4,
-    },
+    mermaid: {theme: {light: 'neutral', dark: 'dark'}},
+    tableOfContents: {minHeadingLevel: 2, maxHeadingLevel: 4},
   } satisfies Preset.ThemeConfig,
 };
 
