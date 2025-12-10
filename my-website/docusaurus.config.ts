@@ -1,5 +1,5 @@
-import {themes as prismThemes} from 'prism-react-renderer';
-import type {Config} from '@docusaurus/types';
+import { themes as prismThemes } from 'prism-react-renderer';
+import type { Config } from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
 // Physical AI & Humanoid Robotics E-Book Configuration
@@ -14,7 +14,7 @@ const config: Config = {
 
   // GitHub Pages deployment
   url: 'https://faizanmustafa.github.io',
-  baseUrl: '/e-book-hackathon-2025/',
+  baseUrl: '/',
   organizationName: 'faizanmustafa',
   projectName: 'e-book-hackathon-2025',
   trailingSlash: false,
@@ -72,9 +72,9 @@ const config: Config = {
           position: 'left',
           label: 'Learn',
         },
-        {to: '/docs/module-1-ros2/intro', label: 'ROS 2', position: 'left'},
-        {to: '/docs/module-4-vla/intro', label: 'VLA', position: 'left'},
-        {to: '/docs/capstone/overview', label: 'Capstone', position: 'left'},
+        { to: '/docs/module-1-ros2/intro', label: 'ROS 2', position: 'left' },
+        { to: '/docs/module-4-vla/intro', label: 'VLA', position: 'left' },
+        { to: '/docs/capstone/overview', label: 'Capstone', position: 'left' },
         {
           href: 'https://github.com/faizanmustafa/e-book-hackathon-2025',
           label: 'GitHub',
@@ -88,26 +88,26 @@ const config: Config = {
         {
           title: 'Learning Modules',
           items: [
-            {label: 'ROS 2 Fundamentals', to: '/docs/module-1-ros2/intro'},
-            {label: 'Gazebo Simulation', to: '/docs/module-2-gazebo/intro'},
-            {label: 'Isaac Sim', to: '/docs/module-3-isaac/intro'},
-            {label: 'VLA & AI Brain', to: '/docs/module-4-vla/intro'},
-            {label: 'Hardware', to: '/docs/module-5-hardware/intro'},
+            { label: 'ROS 2 Fundamentals', to: '/docs/module-1-ros2/intro' },
+            { label: 'Gazebo Simulation', to: '/docs/module-2-gazebo/intro' },
+            { label: 'Isaac Sim', to: '/docs/module-3-isaac/intro' },
+            { label: 'VLA & AI Brain', to: '/docs/module-4-vla/intro' },
+            { label: 'Hardware', to: '/docs/module-5-hardware/intro' },
           ],
         },
         {
           title: 'Resources',
           items: [
-            {label: 'Prerequisites', to: '/docs/prerequisites'},
-            {label: 'Learning Path', to: '/docs/learning-path'},
-            {label: 'Capstone Project', to: '/docs/capstone/overview'},
-            {label: 'Glossary', to: '/docs/appendix/glossary'},
+            { label: 'Prerequisites', to: '/docs/prerequisites' },
+            { label: 'Learning Path', to: '/docs/learning-path' },
+            { label: 'Capstone Project', to: '/docs/capstone/overview' },
+            { label: 'Glossary', to: '/docs/appendix/glossary' },
           ],
         },
         {
           title: 'Community',
           items: [
-            {label: 'ROS Discourse', href: 'https://discourse.ros.org/'},
+            { label: 'ROS Discourse', href: 'https://discourse.ros.org/' },
             {
               label: 'NVIDIA Isaac Forum',
               href:
@@ -128,8 +128,8 @@ const config: Config = {
       darkTheme: prismThemes.dracula,
       additionalLanguages: ['bash', 'python', 'yaml', 'markup', 'cpp', 'json'],
     },
-    mermaid: {theme: {light: 'neutral', dark: 'dark'}},
-    tableOfContents: {minHeadingLevel: 2, maxHeadingLevel: 4},
+    mermaid: { theme: { light: 'neutral', dark: 'dark' } },
+    tableOfContents: { minHeadingLevel: 2, maxHeadingLevel: 4 },
   } satisfies Preset.ThemeConfig,
 };
 
